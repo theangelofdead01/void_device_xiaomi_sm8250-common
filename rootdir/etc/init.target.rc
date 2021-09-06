@@ -1,4 +1,3 @@
-
 # Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -373,6 +372,12 @@ service mi-serial-sh /vendor/bin/init.mi.serial.sh
     group root system radio
     disabled
     oneshot
+
+service adsprpcd /vendor/bin/adsprpcd
+   class main
+   user media
+   group media
+   disabled
 
 on post-fs && property:ro.product.device=elish
     start mi-serial-sh
