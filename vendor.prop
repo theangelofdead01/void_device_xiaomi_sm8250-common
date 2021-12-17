@@ -258,6 +258,9 @@ sys.fflag.override.settings_enable_monitor_phantom_procs=false
 # Quick charge type detect
 persist.vendor.quick.charge=1
 
+# Pre-rendering
+ro.vendor.perf.scroll_opt=true
+
 # Radio
 persist.radio.multisim.config=dsds
 persist.rcs.supported=0
