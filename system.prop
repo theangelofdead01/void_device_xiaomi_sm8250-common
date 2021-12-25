@@ -121,3 +121,6 @@ arm64.memtag.process.system_server=off
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=180
 ro.zram.periodic_wb_delay_hours=24
+
+#AvoidGfxAccel 
+ro.config.avoid_gfx_accel=true
