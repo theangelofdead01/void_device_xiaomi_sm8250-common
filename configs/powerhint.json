@@ -164,6 +164,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "TASchedtuneBoost",
+      "Path": "/dev/stune/top-app/schedtune.boost",
+      "Values": [
+        "30",
+        "10"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUBWHystTriggerCount",
       "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/hyst_trigger_count",
       "Values": [
@@ -418,6 +427,12 @@
       "Node": "LLCCBWMinFreq",
       "Duration": 0,
       "Value": "2597"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "TASchedtuneBoost",
+      "Duration": 2000,
+      "Value": "30"
     },
     {
       "PowerHint": "LAUNCH",
