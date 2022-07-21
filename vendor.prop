@@ -144,6 +144,9 @@ ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=hastings
 vendor.hw.fm.init=0
 
+# Camera
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram
+
 # Chipset
 ro.soc.manufacturer=QTI
 ro.soc.model=SM8250
