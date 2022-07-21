@@ -130,6 +130,9 @@ vendor.qcom.bluetooth.soc=hastings
 # Camera
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera
 
+# Camera
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram
+
 # Chipset
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=SM8250
