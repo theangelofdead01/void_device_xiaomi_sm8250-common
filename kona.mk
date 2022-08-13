@@ -149,6 +149,8 @@ PRODUCT_PACKAGES += \
     BluetoothQti \
     liba2dpoffload \
     libaudiopreprocessing \
+    libalsautils \
+    libnbaio_mono \
     libbatterylistener \
     libbundlewrapper \
     libcomprcapture \
