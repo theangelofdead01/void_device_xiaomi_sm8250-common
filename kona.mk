@@ -117,6 +117,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libaudiopreprocessing \
     libaudio-resampler \
+    libalsautils \
     libbatterylistener \
     libbundlewrapper \
     libcomprcapture \
@@ -127,6 +128,7 @@ PRODUCT_PACKAGES += \
     libhdmiedid \
     libhfp \
     libldnhncr \
+    libnbaio_mono \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
