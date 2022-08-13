@@ -132,6 +132,13 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     sound_trigger.primary.kona
 
+# Audio Alsa Extensions
+PRODUCT_PACKAGES += \
+   libaudioroute \
+   libaudioroutev2 \
+   libalsautils \
+   libalsautilsv2
+
 # Audio Debugging Packages
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
