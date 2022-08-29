@@ -16,6 +16,10 @@
 
 package org.lineageos.settings.utils;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.UserHandle;
+
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -26,11 +30,36 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.lineageos.settings.hbm.HBMFragment;
+import org.lineageos.settings.hbm.AutoHBMService;
+
 public final class FileUtils {
     private static final String TAG = "FileUtils";
 
     private FileUtils() {
         // This class is not supposed to be instantiated
+    }
+
+    private static boolean mServiceEnabled = false;
+
+    private static void startService(Context context) {
+        context.startServiceAsUser(new Intent(context, AutoHBMService.class),
+                UserHandle.CURRENT);
+        mServiceEnabled = true;
+    }
+
+    private static void stopService(Context context) {
+        mServiceEnabled = false;
+        context.stopServiceAsUser(new Intent(context, AutoHBMService.class),
+                UserHandle.CURRENT);
+    }
+
+    public static void enableService(Context context) {
+        if (HBMFragment.isAUTOHBMEnabled(context) && !mServiceEnabled) {
+            startService(context);
+        } else if (!HBMFragment.isAUTOHBMEnabled(context) && mServiceEnabled) {
+            stopService(context);
+        }
     }
 
     /**
@@ -162,5 +191,71 @@ public final class FileUtils {
                     e);
         }
         return ok;
+    }
+
+    /**
+     * Checks whether the given file is writable
+     *
+     * @return true if writable, false if not
+     */
+    public static boolean fileWritable(String fileName) {
+        final File file = new File(fileName);
+        return file.exists() && file.canWrite();
+    }
+
+    public static String readLine(String filename) {
+        if (filename == null) {
+            return null;
+        }
+        BufferedReader br = null;
+        String line = null;
+        try {
+            br = new BufferedReader(new FileReader(filename), 1024);
+            line = br.readLine();
+			if (line != null) {
+            line = line.replaceAll(".+= ", "");
+            }
+        } catch (IOException e) {
+            return null;
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    // ignore
+                }
+            }
+        }
+        return line;
+    }
+
+    /**
+     * Writes the given value into the given file
+     *
+     * @return true on success, false on failure
+     */
+    public static boolean writeValue(String fileName, String value) {
+        BufferedWriter writer = null;
+
+        try {
+            writer = new BufferedWriter(new FileWriter(fileName));
+            writer.write(value);
+        } catch (FileNotFoundException e) {
+            Log.w(TAG, "No such file " + fileName + " for writing", e);
+            return false;
+        } catch (IOException e) {
+            Log.e(TAG, "Could not write to file " + fileName, e);
+            return false;
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException e) {
+                // Ignored, not much we can do anyway
+            }
+        }
+
+        return true;
     }
 }
