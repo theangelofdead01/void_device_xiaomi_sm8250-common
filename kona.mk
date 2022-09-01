@@ -609,9 +609,8 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
-    vendor.qti.hardware.wifi.supplicant \
-    vendor.qti.hardware.wifi.hostapd@1.3.vendor \
-    vendor.qti.hardware.wifi.supplicant@2.3.vendor \
+    vendor.qti.hardware.wifi.hostapd@1.2.vendor \
+    vendor.qti.hardware.wifi.supplicant@2.2.vendor \
     WifiResCommon \
     wpa_supplicant \
     wpa_supplicant.conf
@@ -620,10 +619,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
-
-
-# Wifi Enable IEEE 802.11ax support
-WIFI_FEATURE_HOSTAPD_11AX := true
 
 # WiFi Display
 PRODUCT_PACKAGES += \
