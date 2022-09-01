@@ -97,8 +97,16 @@ vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
 # Bluetooth (FM)
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib/vendor.qti.hardware.fm@1.0.so
-vendor/lib64/vendor.qti.hardware.fm@1.0.so
+
+# Bluetooth (LDAC & LHDC)
+system/system/lib/libldacBT_abr.so
+system/system/lib/libldacBT_enc.so
+system/system/lib/liblhdcBT_enc.so
+system/system/lib/liblhdc.so
+system/system/lib64/libldacBT_abr.so
+system/system/lib64/libldacBT_enc.so
+system/system/lib64/liblhdcBT_enc.so
+system/system/lib64/liblhdc.so
 
 # CDSP
 vendor/bin/cdsprpcd
