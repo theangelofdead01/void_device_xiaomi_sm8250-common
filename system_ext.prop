@@ -1,2 +1,5 @@
 # DPM
 persist.vendor.dpm.feature=11
+
+# Charging
+ro.charger.enable_suspend=1
