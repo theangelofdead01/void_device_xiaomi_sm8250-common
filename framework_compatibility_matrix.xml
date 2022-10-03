@@ -312,6 +312,16 @@
             <instance>imsradio1</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.hardware.radio.ims</name>
+        <version>1</version>
+        <interface>
+            <name>IImsRadio</name>
+            <instance>default</instance>
+            <instance>imsradio0</instance>
+            <instance>imsradio1</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.internal.deviceinfo</name>
         <version>1.0</version>

@@ -1,6 +1,11 @@
 # Dolby
 vendor.dolby.hardware.dms::IDms                                                         u:object_r:hal_dms_hwservice:s0
 
+# IMS
+vendor.qti.hardware.radio.ims.IImsRadio/default                                         u:object_r:vendor_hal_telephony_service:s0
+vendor.qti.hardware.radio.ims.IImsRadio/imsradio0                                       u:object_r:vendor_hal_telephony_service:s0
+vendor.qti.hardware.radio.ims.IImsRadio/imsradio1                                       u:object_r:vendor_hal_telephony_service:s0
+
 # Fingerprint
 com.fingerprints.extension::IFingerprintNavigation                                      u:object_r:hal_fingerprint_hwservice:s0
 com.fingerprints.extension::IFingerprintSensorTest                                      u:object_r:hal_fingerprint_hwservice:s0
