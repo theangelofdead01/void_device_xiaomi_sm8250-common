@@ -38,25 +38,18 @@ system_ext/lib64/soundfx/libozoprocessing.so:vendor/lib64/soundfx/libozoprocessi
 
 # Audio FX modules
 vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libhwdap.so
 vendor/lib/soundfx/libmisoundfx.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
-vendor/lib/soundfx/libswdap.so
-vendor/lib/soundfx/libswgamedap.so
-vendor/lib/soundfx/libswvqe.so
 vendor/lib64/soundfx/libasphere.so
-vendor/lib64/soundfx/libhwdap.so
 vendor/lib64/soundfx/libmisoundfx.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 vendor/lib64/soundfx/libshoebox.so
-vendor/lib64/soundfx/libswdap.so
-vendor/lib64/soundfx/libswgamedap.so
-vendor/lib64/soundfx/libswvqe.so
+
 
 # Audio FX modules dependencies
 system_ext/etc/permissions/audiosphere.xml
@@ -89,17 +82,13 @@ vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
-# Bluetooth (aptX) - from crosshatch - RQ1A.201205.003
+# Bluetooth (aptX) - from cheetah - TD1A.220804.031
 system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 
-# Bluetooth (LDAC & LHDC)
-system/lib/libldacBT_abr.so
-system/lib/libldacBT_enc.so
+# Bluetooth (LHDC)
 system/lib/liblhdc.so
 system/lib/liblhdcBT_enc.so
-system/lib64/libldacBT_abr.so
-system/lib64/libldacBT_enc.so
 system/lib64/liblhdc.so
 system/lib64/liblhdcBT_enc.so
 
@@ -191,7 +180,7 @@ vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 # Consumer IR
 vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.kona.so
 
-# Dolby Miui Alioth
+# Dolby Miui
 system/lib/vendor.dolby.hardware.dms@2.0.so
 system/lib64/vendor.dolby.hardware.dms@2.0.so
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
@@ -199,14 +188,22 @@ vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
 vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml
 vendor/lib/libdapparamstorage.so
 vendor/lib/libdeccfg.so
-vendor/lib/libstagefrightdolby.so
 vendor/lib/vendor.dolby.hardware.dms@2.0.so
 vendor/lib64/libdapparamstorage.so
 vendor/lib64/libdeccfg.so
 vendor/lib64/libdlbdsservice.so
-vendor/lib64/libstagefrightdolby.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so
+
+# Dolby SoundFX
+vendor/lib64/soundfx/libhwdap.so
+vendor/lib/soundfx/libswdap.so
+vendor/lib/soundfx/libswgamedap.so
+vendor/lib/soundfx/libswvqe.so
+vendor/lib/soundfx/libhwdap.so
+vendor/lib64/soundfx/libswdap.so
+vendor/lib64/soundfx/libswgamedap.so
+vendor/lib64/soundfx/libswvqe.so
 
 # Dolby OnePlus Imports
 system_ext/etc/sysconfig/config-com.dolby.daxappui.xml|fce084b5ea52db53d25a7bbf64d8c7ce
@@ -214,14 +211,6 @@ system_ext/etc/sysconfig/config-com.dolby.daxservice.xml|cd1424d569038a393fccadb
 system_ext/etc/sysconfig/hiddenapi-com.dolby.daxservice.xml|3d8dfe8008f667cf2b3572983c08c3af
 -system_ext/priv-app/DaxUI/DaxUI.apk|feae263be94cabae10ade62f50fb7051
 -system_ext/priv-app/daxService/daxService.apk|2e2c5f6939d7545c7f59fa2b15deb727
-
-# Dolby MediaCodecs
-vendor/lib/libstagefright_soft_ac4dec.so
-vendor/lib/libstagefright_soft_ddpdec.so
-vendor/lib/libstagefright_soft_qtiflacdec.so
-vendor/lib64/libstagefright_soft_ac4dec.so
-vendor/lib64/libstagefright_soft_ddpdec.so
-vendor/lib64/libstagefright_soft_qtiflacdec.so
 
 # Display (Dpps)
 vendor/lib/libdpps.so
@@ -557,6 +546,16 @@ vendor/lib64/libqcodec2_platform.so
 vendor/lib64/libqcodec2_utils.so
 vendor/lib64/libqcodec2_v4l2codec.so
 vendor/lib64/libvideooptfeature.so
+
+# Media (libstagefright Dolby)
+vendor/lib/libstagefrightdolby.so
+vendor/lib/libstagefright_soft_ac4dec.so
+vendor/lib/libstagefright_soft_ddpdec.so
+vendor/lib/libstagefright_soft_qtiflacdec.so
+vendor/lib64/libstagefrightdolby.so
+vendor/lib64/libstagefright_soft_ac4dec.so
+vendor/lib64/libstagefright_soft_ddpdec.so
+vendor/lib64/libstagefright_soft_qtiflacdec.so
 
 # Media configs
 odm/etc/media_profiles_V1_0.xml
