@@ -205,12 +205,6 @@ PRODUCT_PACKAGES += \
     libbthost_if.vendor \
     libldacBT_bco \
     libldacBT_bco.vendor \
-    liblhdc \
-    liblhdcBT_enc \
-    liblhdcdec \
-    liblhdcBT_dec
-
-PRODUCT_PACKAGES += \
     libldacBT_enc \
     libldacBT_abr
 
