@@ -271,8 +271,8 @@ PRODUCT_PACKAGES += \
     libsdmutils \
     libtinyxml \
     libvulkan \
-    vendor.display.config@1.5 \
-    vendor.display.config@1.11.vendor \
+    vendor.display.config@1.20 \
+    vendor.display.config@1.20.vendor \
     vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.mapper@1.1.vendor \
