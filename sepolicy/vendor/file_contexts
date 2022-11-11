@@ -15,6 +15,9 @@
 # CIT Display Service
 /vendor/bin/hw/vendor\.xiaomi\.hardware\.citsensorservice@1\.1-service  u:object_r:vendor_hal_citsensorservice_xiaomi_default_exec:s0
 
+# Data Audio Access Directories
+/data/vendor/cit(/.*)?                                                  u:object_r:vendor_audio_data_file:s0
+
 # Charger
 /vendor/bin/batterysecret                                               u:object_r:batterysecret_exec:s0
 
