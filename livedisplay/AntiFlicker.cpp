@@ -16,11 +16,9 @@
 
 #define LOG_TAG "AntiFlickerService"
 
-#include <android-base/file.h>
-#include <android-base/logging.h>
-#include <android-base/strings.h>
-
 #include "AntiFlicker.h"
+#include <android-base/logging.h>
+#include <fstream>
 
 namespace vendor {
 namespace lineage {
@@ -29,23 +27,21 @@ namespace V2_1 {
 namespace implementation {
 
 static constexpr const char* kDcDimmingPath =
-    "/sys/class/drm/card0/card0-DSI-1/disp_param";
+    "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/msm_fb_ea_enable";
 
 Return<bool> AntiFlicker::isEnabled() {
-    std::string buf;
-    if (!android::base::ReadFileToString(kDcDimmingPath, &buf)) {
-        LOG(ERROR) << "Failed to read " << kDcDimmingPath;
-        return false;
-    }
-    return std::stoi(android::base::Trim(buf)) == 1;
+    std::ifstream file(kDcDimmingPath);
+    int result = -1;
+    file >> result;
+    LOG(DEBUG) << "Got result " << result << " fail " << file.fail();
+    return !file.fail() && result > 0;
 }
 
 Return<bool> AntiFlicker::setEnabled(bool enabled) {
-    if (!android::base::WriteStringToFile((enabled ? "0x40000" : "0x50000"), kDcDimmingPath)) {
-        LOG(ERROR) << "Failed to write " << kDcDimmingPath;
-        return false;
-    }
-    return true;
+    std::ofstream file(kDcDimmingPath);
+    file << (enabled ? "1" : "0");
+    LOG(DEBUG) << "setEnabled fail " << file.fail();
+    return !file.fail();
 }
 
 }  // namespace implementation
