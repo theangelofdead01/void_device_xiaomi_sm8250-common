@@ -141,6 +141,7 @@ persist.vendor.qcom.bluetooth.soc=hastings
 ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=hastings
+bluetooth.device.default_name=Poco F3
 
 # Camera
 vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,org.telegram.plus,tw.nekomimi.nekogram
