@@ -68,3 +68,6 @@ debug.cpurend.vsync=false
 
 # Disable Skia tracing by default
 debug.hwui.skia_atrace_enabled=false
+
+# Qualcomm Media Parcer
+vendor.mm.enable.qcom_parser=16777215
