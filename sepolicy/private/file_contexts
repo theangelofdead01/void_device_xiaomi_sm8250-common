@@ -1,2 +1,0 @@
-# Camera
-/vendor/camera(/.*)?                          u:object_r:vendor_configs_file:s0
