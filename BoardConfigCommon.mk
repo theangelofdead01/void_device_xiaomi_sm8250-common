@@ -117,6 +117,9 @@ TARGET_KERNEL_ADDITIONAL_FLAGS += LLVM=1 LLVM_IAS=1
 TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8250
 
+# Kernel Supported Features
+BOARD_RAMDISK_USE_LZ4 := true
+
 # Kernel Clang
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := sdclang
