@@ -17,3 +17,6 @@ android.frameworks.sensorservice::ISensorManager                              u:
 
 # Vibrator Feature
 vendor.xiaomi.hardware.vibratorfeature::IVibratorFeature            u:object_r:vendor_hal_vibratorfeature_hwservice:s0
+
+# Display Feature
+vendor.xiaomi.hardware.displayfeature::IDisplayFeature       u:object_r:vendor_hal_displayfeature_xiaomi_hwservice:s0
