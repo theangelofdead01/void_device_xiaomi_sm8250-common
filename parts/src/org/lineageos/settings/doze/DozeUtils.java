@@ -95,9 +95,9 @@ public final class DozeUtils {
             PowerManager powerManager = context.getSystemService(PowerManager.class);
             powerManager.wakeUp(SystemClock.uptimeMillis(), PowerManager.WAKE_REASON_GESTURE, TAG);
         } else {
-        if (DEBUG) Log.d(TAG, "Launch doze pulse");
-        context.sendBroadcastAsUser(new Intent(DOZE_INTENT),
-                new UserHandle(UserHandle.USER_CURRENT));
+            if (DEBUG) Log.d(TAG, "Launch doze pulse");
+            context.sendBroadcastAsUser(new Intent(DOZE_INTENT),
+                    new UserHandle(UserHandle.USER_CURRENT));
         }
     }
 

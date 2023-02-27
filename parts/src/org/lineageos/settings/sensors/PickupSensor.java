@@ -80,7 +80,7 @@ public class PickupSensor implements SensorEventListener {
             if (isRaiseToWake) {
                 mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
                 mPowerManager.wakeUp(SystemClock.uptimeMillis(),
-                    PowerManager.WAKE_REASON_GESTURE, TAG);
+                        PowerManager.WAKE_REASON_GESTURE, TAG);
             } else {
                 DozeUtils.wakeOrLaunchDozePulse(mContext);
             }

@@ -47,7 +47,7 @@ public class RefreshRateTileService extends TileService {
         for (Display.Mode m : modes) {
             float rate = Float.valueOf(String.format(Locale.US, "%.02f", m.getRefreshRate()));
             if (m.getPhysicalWidth() == mode.getPhysicalWidth() &&
-                m.getPhysicalHeight() == mode.getPhysicalHeight()) {
+                    m.getPhysicalHeight() == mode.getPhysicalHeight()) {
                 availableRates.add(rate);
             }
         }
@@ -80,7 +80,7 @@ public class RefreshRateTileService extends TileService {
 
     private String getFormatRate(float rate) {
         return String.format("%.02f Hz", rate)
-                            .replaceAll("[\\.,]00", "");
+                .replaceAll("[\\.,]00", "");
     }
 
     private void updateTileView() {
@@ -89,7 +89,7 @@ public class RefreshRateTileService extends TileService {
         float max = availableRates.get(activeRateMax);
 
         displayText = String.format(Locale.US, min == max ? "%s" : "%s - %s",
-            getFormatRate(min), getFormatRate(max));
+                getFormatRate(min), getFormatRate(max));
         tile.setContentDescription(displayText);
         tile.setSubtitle(displayText);
         tile.setState(min == max ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);

@@ -76,11 +76,11 @@ public class RefreshService extends Service {
     private void registerReceiver() {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);
-        filter.addAction(Intent.ACTION_SCREEN_ON);        
+        filter.addAction(Intent.ACTION_SCREEN_ON);
         this.registerReceiver(mIntentReceiver, filter);
     }
 
-     private final TaskStackListener mTaskListener = new TaskStackListener() {
+    private final TaskStackListener mTaskListener = new TaskStackListener() {
         @Override
         public void onTaskStackChanged() {
             try {
@@ -90,13 +90,14 @@ public class RefreshService extends Service {
                 }
                 String foregroundApp = info.topActivity.getPackageName();
                 if (!mRefreshUtils.isAppInList) {
-                 mRefreshUtils.getOldRate();
-                  } 
+                    mRefreshUtils.getOldRate();
+                }
                 if (!foregroundApp.equals(mPreviousApp)) {
                     mRefreshUtils.setRefreshRate(foregroundApp);
                     mPreviousApp = foregroundApp;
-                  }
- 		 } catch (Exception e) {}
+                }
+            } catch (Exception e) {
             }
-        };
-    }
+        }
+    };
+}

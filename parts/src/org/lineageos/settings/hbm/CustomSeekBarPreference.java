@@ -18,8 +18,10 @@ package org.lineageos.settings.hbm;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
+
 import androidx.core.content.res.TypedArrayUtils;
 import androidx.preference.*;
+
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -134,8 +136,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
     @Override
     public void onBindViewHolder(PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
-        try
-        {
+        try {
             // move our seekbar to the new view we've been given
             ViewParent oldContainer = mSeekBar.getParent();
             ViewGroup newContainer = (ViewGroup) holder.findViewById(R.id.seekbar);
@@ -227,11 +228,11 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
             if (!mTrackingTouch || mContinuousUpdates) {
                 if (mDefaultValueTextExists && mDefaultValueExists && mValue == mDefaultValue) {
                     mValueTextView.setText(mDefaultValueText + " (" +
-                        getContext().getString(R.string.custom_seekbar_default_value) + ")");
+                            getContext().getString(R.string.custom_seekbar_default_value) + ")");
                 } else {
                     mValueTextView.setText(getContext().getString(R.string.custom_seekbar_value, getTextValue(mValue)) +
-                        (mDefaultValueExists && mValue == mDefaultValue ? " (" +
-                        getContext().getString(R.string.custom_seekbar_default_value) + ")" : ""));
+                            (mDefaultValueExists && mValue == mDefaultValue ? " (" +
+                                    getContext().getString(R.string.custom_seekbar_default_value) + ")" : ""));
                 }
             } else {
                 if (mDefaultValueTextExists && mDefaultValueExists && mTrackingValue == mDefaultValue) {
@@ -251,7 +252,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
             if (mValue == mMinValue || mTrackingTouch) {
                 mMinusImageView.setClickable(false);
                 mMinusImageView.setColorFilter(getContext().getColor(R.color.disabled_text_color),
-                    PorterDuff.Mode.MULTIPLY);
+                        PorterDuff.Mode.MULTIPLY);
             } else {
                 mMinusImageView.setClickable(true);
                 mMinusImageView.clearColorFilter();

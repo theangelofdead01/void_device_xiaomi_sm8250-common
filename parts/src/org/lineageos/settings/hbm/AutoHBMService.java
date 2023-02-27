@@ -13,10 +13,13 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.IBinder;
 import android.os.PowerManager;
+
 import androidx.preference.PreferenceManager;
+
 import android.provider.Settings;
 
 import org.lineageos.settings.utils.FileUtils;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -59,6 +62,7 @@ public class AutoHBMService extends Service {
         }
 
     }
+
     private boolean isCurrentlyEnabled() {
         return FileUtils.getFileValueAsBoolean(HBM, false);
     }
@@ -70,7 +74,7 @@ public class AutoHBMService extends Service {
         public void onSensorChanged(SensorEvent event) {
             float lux = event.values[0];
             KeyguardManager km =
-                (KeyguardManager) getSystemService(getApplicationContext().KEYGUARD_SERVICE);
+                    (KeyguardManager) getSystemService(getApplicationContext().KEYGUARD_SERVICE);
             boolean keyguardShowing = km.inKeyguardRestrictedInputMode();
             float threshold = Float.parseFloat(mSharedPrefs.getString(HBMFragment.KEY_AUTO_HBM_THRESHOLD, "20000"));
             if (lux > threshold) {
@@ -125,7 +129,7 @@ public class AutoHBMService extends Service {
         }
     }
 
-    private Future < ? > submit(Runnable runnable) {
+    private Future<?> submit(Runnable runnable) {
         return mExecutorService.submit(runnable);
     }
 

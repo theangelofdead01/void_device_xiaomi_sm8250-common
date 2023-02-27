@@ -129,7 +129,8 @@ public class ThermalService extends Service {
                     }
                     mPreviousApp = foregroundApp;
                 }
-            } catch (Exception e) {}
+            } catch (Exception e) {
+            }
         }
     };
 }

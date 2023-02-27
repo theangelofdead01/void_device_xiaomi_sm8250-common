@@ -18,11 +18,15 @@ package org.lineageos.settings.display;
 
 import android.os.Bundle;
 import android.content.Context;
+
 import androidx.preference.Preference;
+
 import android.content.SharedPreferences;
+
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
+
 import android.provider.Settings;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
@@ -34,16 +38,16 @@ public class DoubleTapSettingsFragment extends PreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String D2TW_ENABLE_KEY = "dt2w_enable";
-        public static final String SHAREDD2TW = "sharadeD2TW";
+    public static final String SHAREDD2TW = "sharadeD2TW";
 
     private SwitchPreference mD2TWPreference;
     private ITouchFeature mTouchFeature;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-      addPreferencesFromResource(R.xml.dt2w_settings);
+        addPreferencesFromResource(R.xml.dt2w_settings);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
-       try {
+        try {
             mTouchFeature = ITouchFeature.getService();
         } catch (Exception e) {
             // Do nothing
@@ -65,12 +69,12 @@ public class DoubleTapSettingsFragment extends PreferenceFragment implements
     private void enableD2TW(int enable) {
         if (mTouchFeature == null) return;
         try {
-            mTouchFeature.setTouchMode(14,enable);
-            SharedPreferences preferences = getActivity().getSharedPreferences(SHAREDD2TW,Context.MODE_PRIVATE);
+            mTouchFeature.setTouchMode(14, enable);
+            SharedPreferences preferences = getActivity().getSharedPreferences(SHAREDD2TW, Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = preferences.edit();
-             editor.putInt(SHAREDD2TW, enable);
-              editor.commit();
-            }catch (Exception e) {
+            editor.putInt(SHAREDD2TW, enable);
+            editor.commit();
+        } catch (Exception e) {
             // Do nothing
         }
     }

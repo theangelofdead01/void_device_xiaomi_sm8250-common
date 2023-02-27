@@ -25,6 +25,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.SystemProperties;
 import android.util.Log;
+
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.settings.dirac.DiracUtils;
@@ -70,12 +71,12 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         RefreshUtils.startService(context);
         FileUtils.enableService(context);
 
-       //Micro-Service to restore sata of dt2w on reboot
-       SharedPreferences prefs = context.getSharedPreferences(SHAREDD2TW, Context.MODE_PRIVATE);
-       try {
+        //Micro-Service to restore sata of dt2w on reboot
+        SharedPreferences prefs = context.getSharedPreferences(SHAREDD2TW, Context.MODE_PRIVATE);
+        try {
             mTouchFeature = ITouchFeature.getService();
-            mTouchFeature.setTouchMode(14,prefs.getInt(SHAREDD2TW, 1));
-            } catch (Exception e) {
+            mTouchFeature.setTouchMode(14, prefs.getInt(SHAREDD2TW, 1));
+        } catch (Exception e) {
             // Do nothing
         }
 
