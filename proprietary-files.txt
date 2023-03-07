@@ -936,7 +936,7 @@ vendor/lib64/vendor.xiaomi.hardware.vibratorfeature@1.0.so
 
 # Vibrator (Haptics)
 vendor/lib64/libaachaptics.so
-vendor/lib64/vendor.awa.wavelib.so
+
 # VPP
 vendor/bin/vppservice
 vendor/etc/configstore/vpp.configstore.xml
