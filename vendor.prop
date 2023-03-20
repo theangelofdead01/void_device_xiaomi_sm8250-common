@@ -159,7 +159,6 @@ persist.sys.sf.color_mode=9
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=258
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
-persist.sys.sf.native_mode=2
 debug.sf.layer_caching_active_layer_timeout_ms=1000
 ro.surface_flinger.enable_layer_caching=true
 ro.surface_flinger.has_HDR_display=true
