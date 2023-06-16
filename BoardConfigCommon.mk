@@ -113,7 +113,8 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8250
 
 # Kernel Clang
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := sdclang
+TARGET_KERNEL_CLANG_VERSION := 9592507
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-9592507
 KERNEL_LD := LD=ld.lld
 TARGET_KERNEL_ADDITIONAL_FLAGS := LD=ld.lld AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
 TARGET_KERNEL_ADDITIONAL_FLAGS += LLVM=1 LLVM_IAS=1
